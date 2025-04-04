@@ -63,12 +63,17 @@ class HubertFeatureReader(object):
             avg_feat = []
             for start in range(0, x.size(1), self.max_chunk):
                 x_chunk = x[:, start: start + self.max_chunk]
-                feat_chunk, _, avg_feat_chunk = self.model.extract_features(
+                outputs = self.model.extract_features(
                     source=x_chunk,
                     padding_mask=None,
                     mask=False,
                     output_layer=self.layer,
                 )
+                if len(outputs) == 3:
+                  feat_chunk, _, avg_feat_chunk = outputs
+                else:  
+                  feat_chunk, _ = outputs
+                  avg_feat_chunk = feat_chunk.mean(dim=1)
                 avg_feat.append(avg_feat_chunk)
         return torch.cat(avg_feat, 1).squeeze(0)
 

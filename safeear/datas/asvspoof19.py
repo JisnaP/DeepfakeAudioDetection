@@ -38,7 +38,7 @@ def load_feature(feat_path):
     return feat
 
 class ASVSppof2019(Dataset):
-    def __init__(self, tsv_path, protocol_path, feat_dir, max_len=64600, is_train=True):
+    def __init__(self, tsv_path, protocol_path, feat_dir, max_len=12145, is_train=True):
         """
         Initialize the dataset with paths and parameters.
 
@@ -52,7 +52,7 @@ class ASVSppof2019(Dataset):
         super().__init__()
         root, self.lines = get_path_iterator(tsv_path)
         self.feat_dir = Path(feat_dir)
-        _, self.sr = torchaudio.load(root + "/" + self.lines[0].split('\t')[0])
+        #_, self.sr = torchaudio.load(root + "/" + self.lines[0].split('\t')[0])
         self.max_len = max_len 
         self.is_train = is_train
         self.root = Path(root)
