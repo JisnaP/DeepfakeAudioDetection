@@ -1,6 +1,7 @@
 # Deepfake Audio Detection 
 
 ## 🔬 1. Research
+
 This repository is part of ongoing research into detecting deepfake audio using machine learning and signal processing techniques.
 👉 [View the Research Work](https://your-research-link-here.com)
 ---
@@ -46,6 +47,7 @@ datas/
 │          ├── train/fac
 ```
 ![datasets](image.png)
+
 8. **Generate the Hubert L9 feature files**
 ```bash
 mkdir model_zoos
