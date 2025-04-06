@@ -93,8 +93,13 @@ class ASVSppof2019(Dataset):
         
         if avg_hubert_feat.ndim == 3:
             avg_hubert_feat = avg_hubert_feat.permute(2, 1, 0).squeeze(1)  # [T,1,768] -> [1,T,768]
-        else:
-            avg_hubert_feat = avg_hubert_feat.permute(1, 0)  # [T,768] -> [768, T]
+        elif avg_hubert_feat.ndim == 2:
+    # For a tensor of shape [T,768], permute to [768, T]
+            avg_hubert_feat = avg_hubert_feat.permute(1, 0)
+        elif avg_hubert_feat.ndim == 1:
+    # If the tensor is 1D, add an extra dimension.
+            avg_hubert_feat = avg_hubert_feat.unsqueeze(0)
+        
         
         if self.is_train and audio.shape[1] > self.max_len:
             st = random.randint(0, audio.shape[1] - self.max_len - 1)
