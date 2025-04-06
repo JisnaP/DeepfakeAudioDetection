@@ -37,7 +37,7 @@ cd DeepfakeAudioDetection
 ```bash
 pip install -r requirements.txt
 ```
-7. Please download the ASVspoof 2019[ASVspoof 2019](https://datashare.is.ed.ac.uk/handle/10283/3336) datasets and extract them to the datas/datasets directory
+7. Please download the [ASVspoof 2019](https://datashare.is.ed.ac.uk/handle/10283/3336) datasets and extract them to the datas/datasets directory
 ```
 datas/
 │──datasets/                
