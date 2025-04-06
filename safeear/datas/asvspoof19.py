@@ -52,7 +52,7 @@ class ASVSppof2019(Dataset):
         super().__init__()
         root, self.lines = get_path_iterator(tsv_path)
         self.feat_dir = Path(feat_dir)
-        _, self.sr = torchaudio.load(root + "/" + self.lines[0].split('\t')[0])
+        #_, self.sr = torchaudio.load(root + "/" + self.lines[0].split('\t')[0])
         self.max_len = max_len 
         self.is_train = is_train
         self.root = Path(root)
