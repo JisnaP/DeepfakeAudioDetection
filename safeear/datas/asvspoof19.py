@@ -38,7 +38,7 @@ def load_feature(feat_path):
     return feat
 
 class ASVSppof2019(Dataset):
-    def __init__(self, tsv_path, protocol_path, feat_dir, max_len=12145, is_train=True):
+    def __init__(self, tsv_path, protocol_path, feat_dir, max_len=64000, is_train=True):
         """
         Initialize the dataset with paths and parameters.
 
@@ -172,7 +172,7 @@ class DataClass:
         train_path, 
         val_path, 
         test_path, 
-        max_len=64600,
+        max_len=64000,
     ) -> None:
 
         super().__init__()
