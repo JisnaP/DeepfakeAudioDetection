@@ -170,7 +170,31 @@ def collate_fn(batch):
     wavs = pad_sequence(wavs)  # Pad wavs to the same length
     feats = pad_sequence(feats).permute(0, 2, 1)  # Pad feats and permute to (batch_size, max_length, feature_dim)
     return wavs, feats, torch.tensor(targets).long()  # Convert targets to tensor
+def collate_fn_test(batch):
+    """
+    Collate function for test batches (expects 4 items per sample).
 
+    Each sample is assumed to be a tuple: (wav, feat, target, path)
+    """
+    wavs = []
+    feats = []
+    targets = []
+    paths = []
+    for sample in batch:
+        # Ensure the sample has 4 items; if not, handle gracefully.
+        if len(sample) == 4:
+            wav, feat, target, path = sample
+        else:
+            wav, feat, target = sample
+            path = None
+        wavs.append(wav)
+        feats.append(feat)
+        targets.append(target)
+        paths.append(path)
+
+    wavs = pad_sequence(wavs)  # Pad wavs to the same length
+    feats = pad_sequence(feats).permute(0, 2, 1)  # Pad feats and permute accordingly
+    return wavs, feats, torch.tensor(targets).long(), paths
 class DataClass:
     def __init__(
         self,
@@ -284,4 +308,5 @@ class DataModule(LightningDataModule):
             num_workers=self.hparams.num_workers,
             pin_memory=self.hparams.pin_memory,
             shuffle=False,
+            collate_fn=collate_fn_test
         )
