@@ -81,7 +81,7 @@ Before training please verify the parameter configurations in config
 ```
 RuntimeError: Failed to load audio from <_io.BytesIO object at 0x7f45cb978f90>
 ```
-Fix by installing an older FFmpeg,4.4: 
+Fix by installing an older FFmpeg<4.4: 
 ```bash
  wget https://ffmpeg.org/releases/ffmpeg-4.3.2.tar.bz2
 tar xjvf ffmpeg-4.3.2.tar.bz2
