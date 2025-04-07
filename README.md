@@ -97,4 +97,4 @@ Performance metrics for ASVSpoof 2019 for 2 epochs
 
 ## 📚 3. Documentation
 Explore the architecture, pipeline, and training/evaluation strategy in detail.
-**👉 View Full Documentation**
+**👉 [View Full Documentation](https://github.com/JisnaP/DeepfakeAudioDetection/blob/main/Documentation.pdf)**
