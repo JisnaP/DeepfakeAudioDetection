@@ -97,7 +97,7 @@ class ASVSppof2019(Dataset):
     # For a tensor of shape [T,768], permute to [768, T]
             avg_hubert_feat = avg_hubert_feat.permute(1, 0)
         elif avg_hubert_feat.ndim == 1:
-    # If the tensor is 1D, add an extra dimension.
+    # For a tensor of shape [T*768]
             avg_hubert_feat = avg_hubert_feat.unsqueeze(0)
         
         
