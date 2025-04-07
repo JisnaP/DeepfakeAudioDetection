@@ -61,7 +61,7 @@ python dump_hubert_avg_feature.py datasets/ASVSpoof2019 datasets/ASVSpoof2019_Hu
 ```
 ![feat_dir](image-1.png)
 
-9. **Create train.tsv ,dev.tsv and eval.tsv with file names of the audio files with first line the root dir**
+9. **Generate train.tsv, dev.tsv, and eval.tsv files, each beginning with the root directory on the first line, followed by the list of corresponding audio file names.**
 ![train.tsv](image-4.png)
 
 10. **📚Training**
