@@ -3,7 +3,7 @@
 ## 🔬 1. Research
 
 This repository is part of ongoing research into detecting deepfake audio using machine learning and signal processing techniques.
-👉 [View the Research Work](https://your-research-link-here.com)
+👉 [View the Research Work](https://github.com/JisnaP/DeepfakeAudioDetection/blob/main/Research.pdf)
 ---
 
 ## ⚙️ 2. Implementation of 🎧 SafeEar (on AWS EC2 Ubuntu) 
