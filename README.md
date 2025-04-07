@@ -65,6 +65,7 @@ python dump_hubert_avg_feature.py datasets/ASVSpoof2019 datasets/ASVSpoof2019_Hu
 ![train.tsv](image-4.png)
 
 10. **📚Training**
+
 Before training please verify the parameter configurations in config
 ```bash
  python train.py --conf_dir config/train19.yaml  
